@@ -1,758 +1,252 @@
-<!DOCTYPE html>  
-
+<!DOCTYPE html>
 <html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>BUFF FOLLOW TIKTOK</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-	<span id="Follow" style="display: none;"></span>
-
-<head>  
-
-  <meta charset="UTF-8" />  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-
-  <title>LQH-BUFF FOLLOW TIKTOK</title>  
-
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">  
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <style>
+        /* Dán TOÀN BỘ mã CSS "đẹp hơn" vào đây */
+        /* Bắt đầu từ /* --- Global Styles --- */ ... đến ... @keyframes fadeIn { ... } */
+        /* Đảm bảo KHÔNG còn các quy tắc CSS cũ hoặc bị lặp lại */
+    </style>
 </head>
-
-  
-
-  <style>  
-
-    * {  
-
-      box-sizing: border-box;  
-
-      font-family: 'Poppins', sans-serif;  
-
-    }  
-
-
-
-    body {  
-
-      margin: 0;  
-
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);  
-
-      color: #fff;  
-
-    }  
-
-
-
-    .container {  
-
-      max-width: 420px;  
-
-      margin: auto;  
-
-      padding: 20px;  
-
-    }  
-
-
-
-    .input-section {  
-
-      text-align: center;  
-
-      margin-top: 120px;  
-
-      animation: fadeIn 0.5s ease;  
-
-    }  
-
-
-
-    .input-section h2 {  
-
-      font-weight: 600;  
-
-      margin-bottom: 20px;  
-
-    }  
-
-
-
-    .input-section input {  
-
-      padding: 12px;  
-
-      border-radius: 12px;  
-
-      border: none;  
-
-      width: 75%;  
-
-      font-size: 16px;  
-
-      outline: none;  
-
-      background-color: #2b2b2b;  
-
-      color: white;  
-
-    }  
-
-
-
-    .input-section button {  
-
-      padding: 12px 18px;  
-
-      margin-top: 16px;  
-
-      background: linear-gradient(45deg, #1da1f2, #007aff);  
-
-      color: white;  
-
-      font-weight: 600;  
-
-      border: none;  
-
-      border-radius: 12px;  
-
-      cursor: pointer;  
-
-      transition: 0.3s;  
-
-    }  
-
-
-
-    .input-section button:hover {  
-
-      opacity: 0.9;  
-
-    }  
-
-
-
-    .profile-section {  
-
-      display: none;  
-
-      animation: fadeIn 0.5s ease;  
-
-    }  
-
-
-
-    .header {  
-
-      display: flex;  
-
-      justify-content: space-between;  
-
-      align-items: center;  
-
-      padding: 12px 0;  
-
-      font-size: 18px;  
-
-    }  
-
-
-
-    .header i {  
-
-      font-size: 24px;  
-
-      cursor: pointer;  
-
-    }  
-
-
-
-    .icons i {  
-
-      font-size: 22px;  
-
-      margin-left: 14px;  
-
-      cursor: pointer;  
-
-    }  
-
-
-
-    .profile-card {  
-
-      background: #202020;  
-
-      border-radius: 20px;  
-
-      padding: 24px;  
-
-      margin-top: 20px;  
-
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);  
-
-      transition: all 0.3s ease;  
-
-    }  
-
-
-
-    .profile {  
-
-      text-align: center;  
-
-    }  
-
-
-
-    .avatar {  
-
-      width: 100px;  
-
-      height: 100px;  
-
-      border-radius: 50%;  
-
-      object-fit: cover;  
-
-      border: 3px solid #444;  
-
-      margin-bottom: 14px;  
-
-    }  
-
-
-
-    .display-name {  
-
-      font-size: 20px;  
-
-      font-weight: 600;  
-
-    }  
-
-
-
-    .username {  
-
-      font-size: 14px;  
-
-      color: #aaa;  
-
-      margin-bottom: 8px;  
-
-    }  
-
-
-
-    .bio {  
-
-      color: #ccc;  
-
-      font-size: 14px;  
-
-      margin: 12px 0;  
-
-      font-style: italic;  
-
-    }  
-
-
-
-    .stats {  
-
-      display: flex;  
-
-      justify-content: space-around;  
-
-      margin: 16px 0;  
-
-    }  
-
-
-
-    .stat {  
-
-      text-align: center;  
-
-    }  
-
-
-
-    .stat-number {  
-
-      font-weight: 600;  
-
-      font-size: 18px;  
-
-    }  
-
-
-
-    .stat-label {  
-
-      color: #aaa;  
-
-      font-size: 13px;  
-
-    }  
-
-
-
-    .buttons {  
-
-      display: flex;  
-
-      justify-content: center;  
-
-      gap: 10px;  
-
-      padding: 0 16px;  
-
-      margin-top: 10px;  
-
-    }  
-
-
-
-    .btn {  
-
-      background-color: #333;  
-
-      color: white;  
-
-      font-size: 14px;  
-
-      border: none;  
-
-      border-radius: 14px;  
-
-      padding: 10px 12px;  
-
-      display: flex;  
-
-      align-items: center;  
-
-      justify-content: center;  
-
-      gap: 6px;  
-
-      cursor: pointer;  
-
-      transition: background 0.3s;  
-
-    }  
-
-
-
-    .stat-number sup {  
-
-      color: #ff4c4c;  
-
-      font-size: 12px;  
-
-      margin-left: 2px;  
-
-    }  
-
-
-
-    .stat-gained {  
-
-      color: #ff4c4c;  
-
-      font-size: 13px;  
-
-      font-weight: bold;  
-
-      margin-top: 4px;  
-
-    }  
-
-
-
-    .btn:hover {  
-
-      background-color: #444;  
-
-    }  
-
-
-
-    .btn-main {  
-
-      flex: 4;  
-
-    }  
-
-
-
-    .btn-small {  
-
-      flex: 1;  
-
-    }  
-
-
-
-    .down-arrow {  
-
-      transform: rotate(0deg);  
-
-      transition: transform 0.3s ease-in-out;  
-
-    }  
-
-
-
-    .down-arrow.rotated {  
-
-      transform: rotate(180deg);  
-
-    }
-
-
-
-    .stats-text {  
-
-      margin-top: 20px;  
-
-      font-size: 14px;  
-
-      text-align: left;  
-
-      color: #ddd;  
-
-      display: none;  
-
-    }
-
-
-
-    @keyframes fadeIn {  
-
-      from { opacity: 0; transform: translateY(20px); }  
-
-      to { opacity: 1; transform: translateY(0); }  
-
-    }  
-
-  </style>  
-
-</head>  
-
-<body>  
-
-
-
-  <div class="container">  
-
-    <div class="input-section" id="inputSection">  
-
-      <h2>Hí Hí Tên Tik Tok</h2>  
-
-      <input type="text" id="usernameInput" placeholder="Hoang" />  
-
-      <br/>  
-
-      <button onclick="getInfo()">Tiến hành</button>  
-
-      <div id="resultDiv" style="margin-top: 20px; text-align: center;"></div>  
-
-    </div>  
-
-    
-
-
-
-    <div class="profile-section" id="profileSection">  
-
-      <div class="header">  
-
-        <i class="ri-arrow-left-line" onclick="goBack()"></i>  
-
-        <div id="nickname">Nguyen Hoang Thong</div>  
-
-        <div class="icons">  
-
-          <i class="ri-share-forward-line" onclick="copyLink()"></i>  
-
-        </div>  
-
-      </div>  
-
-
-
-      <div class="profile-card">  
-
-        <div class="profile">  
-
-          <img src="" id="avatar" class="avatar" />  
-
-          <div class="username" id="userId">@id</div>
-
-
-
-          <div class="stats">  
-
-            <div class="stat">  
-
-              <div class="stat-number" id="following">0</div>  
-
-              <div class="stat-label">Đang follow</div>  
-
-            </div>  
-
-            <div class="stat">  
-
-              <div class="stat-number">  
-
-                <span id="followers">0</span><sup id="increase">+0</sup>  
-
-              </div>  
-
-              <div class="stat-label">Follower</div>  
-
-            </div>  
-
-            <div class="stat">  
-
-              <div class="stat-number" id="likes">0</div>  
-
-              <div class="stat-label">Lượt thích</div>  
-
-            </div>  
-
-          </div>  
-
-
-
-          <div class="buttons">  
-
-            <button class="btn btn-main" id="messageBtn"><i class="ri-send-plane-line"></i> Nhắn tin</button>  
-
-            <button class="btn btn-small" onclick="toggleStats()">  
-
-              <i class="ri-arrow-down-s-line down-arrow"></i>  
-
-            </button>  
-
-          </div>  
-
-        </div>  
-
-      </div>  
-
-
-
-
-        </ul>  
-
-      </div>  
-
-    </div>  
-
-  </div>  
-
-
-
-  <script>  
-
-    let tiktokLink = "";  
-
-
-
-    function getInfo() {  
-
-      const username = document.getElementById("usernameInput").value.trim();  
-
-      if (!username) {  
-
-        alert("Vui lòng nhập username");  
-
-        return;  
-
-      }  
-
-
-
-      let percent = 0;  
-
-      const resultDiv = document.getElementById("resultDiv");  
-
-      resultDiv.innerHTML = `<div class="loading" style="margin-bottom:10px;"></div><div>Đang thực hiện buff... <strong id="progress">0%</strong></div>`;  
-
-      const progressEl = document.getElementById("progress");  
-
-
-
-      const maxBeforeAPI = Math.floor(Math.random() * 2) + 92;  
-
-      const interval = setInterval(() => {  
-
-        if (percent < maxBeforeAPI) {  
-
-          percent++;  
-
-          progressEl.textContent = percent + "%";  
-
-        }  
-
-      }, 90);  
-
-
-
-      fetch(`https://tieusu.netlify.app/?fbclid=IwZXh0bgNhZW0CMTEAAR4ZZ9At2Ah-EJUAdyhyw9WflGSVviJa1agm23GGD1hotYzl9HPUbIqU2zhO1Q_aem_oBciFEywNw5aSz8cimdE9Q`)  
-
-        .then(res => res.json())  
-
-        .then(data => {  
-
-          clearInterval(interval);  
-
-          resultDiv.innerHTML = "";  
-
-
-
-          if (data.code === 1) {  
-
-            clearInterval(interval);  
-
-            resultDiv.innerHTML = "";  
-
-            alert(data.msg || "Đã xảy ra lỗi, vui lòng thử lại sau.");  
-
-            return;  
-
-          }  
-
-
-
-          if (data.code !== 0) {  
-
-            throw new Error("Không tìm thấy");  
-
-          }  
-
-
-
-          const info = data.data.stats;  
-
-          document.getElementById("nickname").innerText = info.nickname || "";  
-
-          document.getElementById("userId").innerText = "@" + info.username;  
-
-          document.getElementById("avatar").src = info.profile_pic; 
-
-          document.getElementById("followers").innerText = info.followers_before;  
-
-          document.getElementById("followers_after").innerText = info.followers_after;  
-
-          document.getElementById("increase").innerText = "+" + info.increase;  
-
-          document.getElementById("following").innerText = info.following;  
-
-          document.getElementById("likes").innerText = info.likes;  
-
-          tiktokLink = info.tiktok_link;  
-
-
-
-          document.getElementById("messageBtn").onclick = () => window.open(tiktokLink, "_blank");  
-
-
-
-          document.getElementById("inputSection").style.display = "none";  
-
-          document.getElementById("profileSection").style.display = "block";  
-
-        })  
-
-        .catch(err => {  
-
-          clearInterval(interval);  
-
-          resultDiv.innerHTML = "";  
-
-          console.error(err);  
-
-          alert("Không tìm thấy tài khoản TikTok");  
-
-        });  
-
-    }  
-
-
-
-    function goBack() {  
-
-      document.getElementById("inputSection").style.display = "block";  
-
-      document.getElementById("profileSection").style.display = "none";  
-
-    }  
-
-
-
-    function copyLink() {  
-
-      if (!tiktokLink) return;  
-
-      navigator.clipboard.writeText(tiktokLink).then(() => {  
-
-        alert("Đã sao chép liên kết TikTok");  
-
-      });  
-
-    }  
-
-
-
-    function toggleStats() {  
-
-      const statsText = document.getElementById("statsText");  
-
-      const arrow = document.querySelector(".down-arrow");  
-
-
-
-      if (statsText.style.display === "none" || statsText.style.display === "") {  
-
-        statsText.style.display = "block";  
-
-        arrow.classList.add("rotated");  
-
-
-
-        document.getElementById("followingText").textContent = document.getElementById("following").textContent;  
-
-        document.getElementById("followersText").textContent = document.getElementById("followers").textContent;  
-
-        document.getElementById("increaseText").textContent = document.getElementById("increase").textContent;  
-
-        document.getElementById("likesText").textContent = document.getElementById("likes").textContent;
-
-        document.getElementById("userIdText").textContent = document.getElementById("userId").textContent;
-
-        document.getElementById("nicknameText").textContent = document.getElementById("nickname").textContent;
-
-        document.getElementById("followers_afterText").textContent = document.getElementById("followers_after").textContent;
-
-      } else {  
-
-        statsText.style.display = "none";  
-
-        arrow.classList.remove("rotated");  
-
-      }  
-
-    }  
-
-  </script>  
-
-</body>  
-
+<body>
+    <div class="container">
+        <div class="input-section" id="inputSection">
+            <h2>Nhập username TikTok</h2>
+            <input type="text" id="usernameInput" placeholder="HDX" />
+            <br/>
+            <button onclick="getInfo()">Tiến hành</button>
+            <div id="resultDiv" style="margin-top: 20px; text-align: center;"></div>
+        </div>
+
+        <div class="profile-section" id="profileSection">
+            <div class="header">
+                <i class="ri-arrow-left-line" onclick="goBack()"></i>
+                <div id="nickname"></div> <div class="icons">
+                    <i class="ri-share-forward-line" onclick="copyLink()"></i>
+                </div>
+            </div>
+
+            <div class="profile-card"> <div class="profile">
+                    <img src="" id="avatar" class="avatar" alt="User Avatar"/> <div class="username" id="userId"></div> <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number" id="following"></div> <div class="stat-label">Đang follow</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">
+                                <span id="followers"></span><sup id="increase"></sup> </div>
+                            <div class="stat-label">Follower</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="likes"></div> <div class="stat-label">Lượt thích</div>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="btn btn-main" id="messageBtn"><i class="ri-send-plane-line"></i> Nhắn tin</button>
+                        <button class="btn btn-small" onclick="toggleStats()">
+                            <i class="ri-arrow-down-s-line down-arrow"></i>
+                        </button>
+                    </div>
+                </div>
+            </div> <div id="statsText" class="stats-text">
+                 <p>Thông Tin Chi Tiết</p>
+                <ul>
+                  <li>Username: <span id="userIdText"></span></li> <li>Nickname: <span id="nicknameText"></span></li>
+                  <li>Đang follow: <span id="followingText"></span></li>
+                  <li>Follower trước: <span id="followersTextDetail"></span></li> <li>Tăng: <span id="increaseText"></span></li>
+                  <li>Follower sau: <span id="followers_afterText"></span></li>
+                  <li>Lượt thích: <span id="likesText"></span></li>
+                </ul>
+                <br>
+                <strong><i class="fa-solid fa-user-shield"></i> ADMIN:</strong>
+                <a href="https://guanghai.netlifi.app/" target="_blank"> LÊ QUANG HẢI </a><br>
+                <strong><i class="fa-brands fa-telegram"></i> TELEGRAM:</strong>
+                <a href="https://t.me/bodaycon29" target="_blank"> @bodaycon29</a><br>
+                <strong><i class="fa-brands fa-facebook"></i> FACEBOOK:</strong>
+                <a href="https://facebook.com/Guanghaz" target="_blank"> @Guanghaz</a><br>
+                <strong><i class="fa-brands fa-tiktok"></i> TIKTOK:</strong><a href="https://tiktok.com/@guanghaz" target="_blank"> @guanghaz</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let tiktokLink = "";
+
+        function getInfo() {
+            const username = document.getElementById("usernameInput").value.trim();
+            if (!username) {
+                alert("Vui lòng nhập username");
+                return;
+            }
+
+            let percent = 0;
+            const resultDiv = document.getElementById("resultDiv");
+            resultDiv.innerHTML = `<div class="loading" style="margin-bottom:10px;">Loading... <strong id="progress">0%</strong></div>`; // Updated text
+            const progressEl = document.getElementById("progress");
+
+            const maxBeforeAPI = Math.floor(Math.random() * 2) + 94;
+            const interval = setInterval(() => {
+                if (percent < maxBeforeAPI) {
+                    percent++;
+                    progressEl.textContent = percent + "%";
+                }
+            }, 90);
+
+            // Using the hardcoded API endpoint from your code
+            fetch(`https://guanghai.x10.mx/fl.php?key=lequanghai291008&username=${username}`)
+                .then(res => {
+                     if (!res.ok) { // Check for HTTP errors
+                         throw new Error(`HTTP error! status: ${res.status}`);
+                     }
+                     return res.json();
+                })
+                .then(data => {
+                    clearInterval(interval); // Stop fake progress
+                    resultDiv.innerHTML = ""; // Clear loading message
+
+                    // Check the API's response code
+                    if (data.code !== 0) {
+                         // Handle API specific errors based on data.code or data.msg
+                         const errorMessage = data.msg || `API error code: ${data.code}. Unknown error.`;
+                         alert(errorMessage);
+                         logging.error(`API returned error: ${errorMessage}`); // Basic logging
+                         // Keep input section visible on API error
+                         document.getElementById("inputSection").style.display = "block";
+                         document.getElementById("profileSection").style.display = "none";
+                         return;
+                    }
+
+                    // API success (data.code === 0)
+                    const info = data.data.stats;
+
+                    // Update profile elements with fetched data
+                    document.getElementById("nickname").innerText = info.nickname || "No Nickname"; // Handle potential missing nickname
+                    document.getElementById("userId").innerText = "@" + (info.username || "unknown"); // Ensure username exists and add "@"
+                    document.getElementById("avatar").src = info.profile_pic || "placeholder.jpg"; // Use a placeholder if profile_pic is missing
+                    document.getElementById("avatar").alt = info.username + "'s avatar" || "User Avatar"; // Set alt text for accessibility
+
+                    // Update stats
+                    document.getElementById("following").innerText = info.following || "0";
+                    document.getElementById("followers").innerText = info.followers_before || "0"; // Followers BEFORE
+                    document.getElementById("followers_after").innerText = info.followers_after || "0"; // Followers AFTER (used in detail)
+                    document.getElementById("increase").innerText = "+" + (info.increase || "0"); // Increase value
+                    document.getElementById("likes").innerText = info.likes || "0";
+
+                    tiktokLink = info.tiktok_link || `https://www.tiktok.com/@${info.username}`; // Generate link if missing
+
+                    // Update detailed stats text section (hidden by default)
+                    document.getElementById("userIdText").textContent = "@" + (info.username || "unknown");
+                    document.getElementById("nicknameText").textContent = info.nickname || "No Nickname";
+                    document.getElementById("followingText").textContent = info.following || "0";
+                    document.getElementById("followersTextDetail").textContent = info.followers_before || "0"; // Detail section needs the BEFORE count
+                    document.getElementById("increaseText").textContent = "+" + (info.increase || "0");
+                    document.getElementById("followers_afterText").textContent = info.followers_after || "0"; // Detail section needs the AFTER count
+                    document.getElementById("likesText").textContent = info.likes || "0";
+
+
+                    // Update message button link
+                    document.getElementById("messageBtn").onclick = () => {
+                         if (tiktokLink) {
+                             window.open(tiktokLink, "_blank");
+                         } else {
+                             alert("TikTok link not available for this user.");
+                         }
+                    };
+
+                    // Hide input section and show profile section with fade animation
+                    // CSS handles the animation via the `fadeIn` class (applied by default)
+                    document.getElementById("inputSection").style.display = "none";
+                    document.getElementById("profileSection").style.display = "block"; // Set display to block to make it visible
+
+                })
+                .catch(err => {
+                    clearInterval(interval); // Stop fake progress
+                    resultDiv.innerHTML = ""; // Clear loading message
+                    console.error("Fetch error:", err);
+                    alert("Failed to fetch data or TikTok account not found."); // Generic error message
+                     // Keep input section visible on fetch error
+                    document.getElementById("inputSection").style.display = "block";
+                    document.getElementById("profileSection").style.display = "none"; // Ensure profile section is hidden
+                });
+        }
+
+        function goBack() {
+            // Hide profile section and show input section
+            document.getElementById("profileSection").style.display = "none";
+            document.getElementById("inputSection").style.display = "block";
+             // Reset profile details visibility and arrow rotation when going back
+            const statsText = document.getElementById("statsText");
+            const arrow = document.querySelector(".down-arrow");
+            statsText.style.display = "none";
+            arrow.classList.remove("rotated");
+        }
+
+        function copyLink() {
+            // Use the stored tiktokLink
+            if (!tiktokLink) {
+                alert("TikTok link not available.");
+                return;
+            }
+            navigator.clipboard.writeText(tiktokLink).then(() => {
+                alert("TikTok link copied to clipboard!"); // English alert
+            }).catch(err => {
+                 console.error("Failed to copy link:", err);
+                 alert("Failed to copy link."); // Error message
+            });
+        }
+
+        function toggleStats() {
+            const statsText = document.getElementById("statsText");
+            const arrow = document.querySelector(".down-arrow");
+
+            // Toggle display
+            if (statsText.style.display === "none" || statsText.style.display === "") {
+                statsText.style.display = "block";
+                arrow.classList.add("rotated");
+
+                // Update the detailed stats text content (already done in getInfo, but good to ensure if needed)
+                // These are already populated in getInfo, just need to be displayed
+                // document.getElementById("followingText").textContent = document.getElementById("following").textContent;
+                // document.getElementById("followersTextDetail").textContent = document.getElementById("followers").textContent; // Use the BEFORE value from summary stat
+                // document.getElementById("increaseText").textContent = document.getElementById("increase").textContent;
+                // document.getElementById("likesText").textContent = document.getElementById("likes").textContent;
+                // document.getElementById("userIdText").textContent = document.getElementById("userId").textContent;
+                // document.getElementById("nicknameText").textContent = document.getElementById("nickname").textContent;
+                // document.getElementById("followers_afterText").textContent = document.getElementById("followers_after").textContent;
+
+            } else {
+                statsText.style.display = "none";
+                arrow.classList.remove("rotated");
+            }
+        }
+
+        // --- Basic Loading Spinner CSS (add this inside your <style> tag too) ---
+        /*
+        .loading {
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #007bff;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          animation: spin 1s linear infinite;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        */
+
+
+    </script>
+
+</body>
 </html>
