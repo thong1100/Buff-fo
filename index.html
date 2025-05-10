@@ -1,0 +1,758 @@
+<!DOCTYPE html>  
+
+<html lang="vi">
+
+	<span id="Follow" style="display: none;"></span>
+
+<head>  
+
+  <meta charset="UTF-8" />  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+
+  <title>LQH-BUFF FOLLOW TIKTOK</title>  
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">  
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+  
+
+  <style>  
+
+    * {  
+
+      box-sizing: border-box;  
+
+      font-family: 'Poppins', sans-serif;  
+
+    }  
+
+
+
+    body {  
+
+      margin: 0;  
+
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);  
+
+      color: #fff;  
+
+    }  
+
+
+
+    .container {  
+
+      max-width: 420px;  
+
+      margin: auto;  
+
+      padding: 20px;  
+
+    }  
+
+
+
+    .input-section {  
+
+      text-align: center;  
+
+      margin-top: 120px;  
+
+      animation: fadeIn 0.5s ease;  
+
+    }  
+
+
+
+    .input-section h2 {  
+
+      font-weight: 600;  
+
+      margin-bottom: 20px;  
+
+    }  
+
+
+
+    .input-section input {  
+
+      padding: 12px;  
+
+      border-radius: 12px;  
+
+      border: none;  
+
+      width: 75%;  
+
+      font-size: 16px;  
+
+      outline: none;  
+
+      background-color: #2b2b2b;  
+
+      color: white;  
+
+    }  
+
+
+
+    .input-section button {  
+
+      padding: 12px 18px;  
+
+      margin-top: 16px;  
+
+      background: linear-gradient(45deg, #1da1f2, #007aff);  
+
+      color: white;  
+
+      font-weight: 600;  
+
+      border: none;  
+
+      border-radius: 12px;  
+
+      cursor: pointer;  
+
+      transition: 0.3s;  
+
+    }  
+
+
+
+    .input-section button:hover {  
+
+      opacity: 0.9;  
+
+    }  
+
+
+
+    .profile-section {  
+
+      display: none;  
+
+      animation: fadeIn 0.5s ease;  
+
+    }  
+
+
+
+    .header {  
+
+      display: flex;  
+
+      justify-content: space-between;  
+
+      align-items: center;  
+
+      padding: 12px 0;  
+
+      font-size: 18px;  
+
+    }  
+
+
+
+    .header i {  
+
+      font-size: 24px;  
+
+      cursor: pointer;  
+
+    }  
+
+
+
+    .icons i {  
+
+      font-size: 22px;  
+
+      margin-left: 14px;  
+
+      cursor: pointer;  
+
+    }  
+
+
+
+    .profile-card {  
+
+      background: #202020;  
+
+      border-radius: 20px;  
+
+      padding: 24px;  
+
+      margin-top: 20px;  
+
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);  
+
+      transition: all 0.3s ease;  
+
+    }  
+
+
+
+    .profile {  
+
+      text-align: center;  
+
+    }  
+
+
+
+    .avatar {  
+
+      width: 100px;  
+
+      height: 100px;  
+
+      border-radius: 50%;  
+
+      object-fit: cover;  
+
+      border: 3px solid #444;  
+
+      margin-bottom: 14px;  
+
+    }  
+
+
+
+    .display-name {  
+
+      font-size: 20px;  
+
+      font-weight: 600;  
+
+    }  
+
+
+
+    .username {  
+
+      font-size: 14px;  
+
+      color: #aaa;  
+
+      margin-bottom: 8px;  
+
+    }  
+
+
+
+    .bio {  
+
+      color: #ccc;  
+
+      font-size: 14px;  
+
+      margin: 12px 0;  
+
+      font-style: italic;  
+
+    }  
+
+
+
+    .stats {  
+
+      display: flex;  
+
+      justify-content: space-around;  
+
+      margin: 16px 0;  
+
+    }  
+
+
+
+    .stat {  
+
+      text-align: center;  
+
+    }  
+
+
+
+    .stat-number {  
+
+      font-weight: 600;  
+
+      font-size: 18px;  
+
+    }  
+
+
+
+    .stat-label {  
+
+      color: #aaa;  
+
+      font-size: 13px;  
+
+    }  
+
+
+
+    .buttons {  
+
+      display: flex;  
+
+      justify-content: center;  
+
+      gap: 10px;  
+
+      padding: 0 16px;  
+
+      margin-top: 10px;  
+
+    }  
+
+
+
+    .btn {  
+
+      background-color: #333;  
+
+      color: white;  
+
+      font-size: 14px;  
+
+      border: none;  
+
+      border-radius: 14px;  
+
+      padding: 10px 12px;  
+
+      display: flex;  
+
+      align-items: center;  
+
+      justify-content: center;  
+
+      gap: 6px;  
+
+      cursor: pointer;  
+
+      transition: background 0.3s;  
+
+    }  
+
+
+
+    .stat-number sup {  
+
+      color: #ff4c4c;  
+
+      font-size: 12px;  
+
+      margin-left: 2px;  
+
+    }  
+
+
+
+    .stat-gained {  
+
+      color: #ff4c4c;  
+
+      font-size: 13px;  
+
+      font-weight: bold;  
+
+      margin-top: 4px;  
+
+    }  
+
+
+
+    .btn:hover {  
+
+      background-color: #444;  
+
+    }  
+
+
+
+    .btn-main {  
+
+      flex: 4;  
+
+    }  
+
+
+
+    .btn-small {  
+
+      flex: 1;  
+
+    }  
+
+
+
+    .down-arrow {  
+
+      transform: rotate(0deg);  
+
+      transition: transform 0.3s ease-in-out;  
+
+    }  
+
+
+
+    .down-arrow.rotated {  
+
+      transform: rotate(180deg);  
+
+    }
+
+
+
+    .stats-text {  
+
+      margin-top: 20px;  
+
+      font-size: 14px;  
+
+      text-align: left;  
+
+      color: #ddd;  
+
+      display: none;  
+
+    }
+
+
+
+    @keyframes fadeIn {  
+
+      from { opacity: 0; transform: translateY(20px); }  
+
+      to { opacity: 1; transform: translateY(0); }  
+
+    }  
+
+  </style>  
+
+</head>  
+
+<body>  
+
+
+
+  <div class="container">  
+
+    <div class="input-section" id="inputSection">  
+
+      <h2>Hí Hí Tên Tik Tok</h2>  
+
+      <input type="text" id="usernameInput" placeholder="Hoang" />  
+
+      <br/>  
+
+      <button onclick="getInfo()">Tiến hành</button>  
+
+      <div id="resultDiv" style="margin-top: 20px; text-align: center;"></div>  
+
+    </div>  
+
+    
+
+
+
+    <div class="profile-section" id="profileSection">  
+
+      <div class="header">  
+
+        <i class="ri-arrow-left-line" onclick="goBack()"></i>  
+
+        <div id="nickname">Nguyen Hoang Thong</div>  
+
+        <div class="icons">  
+
+          <i class="ri-share-forward-line" onclick="copyLink()"></i>  
+
+        </div>  
+
+      </div>  
+
+
+
+      <div class="profile-card">  
+
+        <div class="profile">  
+
+          <img src="" id="avatar" class="avatar" />  
+
+          <div class="username" id="userId">@id</div>
+
+
+
+          <div class="stats">  
+
+            <div class="stat">  
+
+              <div class="stat-number" id="following">0</div>  
+
+              <div class="stat-label">Đang follow</div>  
+
+            </div>  
+
+            <div class="stat">  
+
+              <div class="stat-number">  
+
+                <span id="followers">0</span><sup id="increase">+0</sup>  
+
+              </div>  
+
+              <div class="stat-label">Follower</div>  
+
+            </div>  
+
+            <div class="stat">  
+
+              <div class="stat-number" id="likes">0</div>  
+
+              <div class="stat-label">Lượt thích</div>  
+
+            </div>  
+
+          </div>  
+
+
+
+          <div class="buttons">  
+
+            <button class="btn btn-main" id="messageBtn"><i class="ri-send-plane-line"></i> Nhắn tin</button>  
+
+            <button class="btn btn-small" onclick="toggleStats()">  
+
+              <i class="ri-arrow-down-s-line down-arrow"></i>  
+
+            </button>  
+
+          </div>  
+
+        </div>  
+
+      </div>  
+
+
+
+
+        </ul>  
+
+      </div>  
+
+    </div>  
+
+  </div>  
+
+
+
+  <script>  
+
+    let tiktokLink = "";  
+
+
+
+    function getInfo() {  
+
+      const username = document.getElementById("usernameInput").value.trim();  
+
+      if (!username) {  
+
+        alert("Vui lòng nhập username");  
+
+        return;  
+
+      }  
+
+
+
+      let percent = 0;  
+
+      const resultDiv = document.getElementById("resultDiv");  
+
+      resultDiv.innerHTML = `<div class="loading" style="margin-bottom:10px;"></div><div>Đang thực hiện buff... <strong id="progress">0%</strong></div>`;  
+
+      const progressEl = document.getElementById("progress");  
+
+
+
+      const maxBeforeAPI = Math.floor(Math.random() * 2) + 92;  
+
+      const interval = setInterval(() => {  
+
+        if (percent < maxBeforeAPI) {  
+
+          percent++;  
+
+          progressEl.textContent = percent + "%";  
+
+        }  
+
+      }, 90);  
+
+
+
+      fetch(`https://tieusu.netlify.app/?fbclid=IwZXh0bgNhZW0CMTEAAR4ZZ9At2Ah-EJUAdyhyw9WflGSVviJa1agm23GGD1hotYzl9HPUbIqU2zhO1Q_aem_oBciFEywNw5aSz8cimdE9Q`)  
+
+        .then(res => res.json())  
+
+        .then(data => {  
+
+          clearInterval(interval);  
+
+          resultDiv.innerHTML = "";  
+
+
+
+          if (data.code === 1) {  
+
+            clearInterval(interval);  
+
+            resultDiv.innerHTML = "";  
+
+            alert(data.msg || "Đã xảy ra lỗi, vui lòng thử lại sau.");  
+
+            return;  
+
+          }  
+
+
+
+          if (data.code !== 0) {  
+
+            throw new Error("Không tìm thấy");  
+
+          }  
+
+
+
+          const info = data.data.stats;  
+
+          document.getElementById("nickname").innerText = info.nickname || "";  
+
+          document.getElementById("userId").innerText = "@" + info.username;  
+
+          document.getElementById("avatar").src = info.profile_pic; 
+
+          document.getElementById("followers").innerText = info.followers_before;  
+
+          document.getElementById("followers_after").innerText = info.followers_after;  
+
+          document.getElementById("increase").innerText = "+" + info.increase;  
+
+          document.getElementById("following").innerText = info.following;  
+
+          document.getElementById("likes").innerText = info.likes;  
+
+          tiktokLink = info.tiktok_link;  
+
+
+
+          document.getElementById("messageBtn").onclick = () => window.open(tiktokLink, "_blank");  
+
+
+
+          document.getElementById("inputSection").style.display = "none";  
+
+          document.getElementById("profileSection").style.display = "block";  
+
+        })  
+
+        .catch(err => {  
+
+          clearInterval(interval);  
+
+          resultDiv.innerHTML = "";  
+
+          console.error(err);  
+
+          alert("Không tìm thấy tài khoản TikTok");  
+
+        });  
+
+    }  
+
+
+
+    function goBack() {  
+
+      document.getElementById("inputSection").style.display = "block";  
+
+      document.getElementById("profileSection").style.display = "none";  
+
+    }  
+
+
+
+    function copyLink() {  
+
+      if (!tiktokLink) return;  
+
+      navigator.clipboard.writeText(tiktokLink).then(() => {  
+
+        alert("Đã sao chép liên kết TikTok");  
+
+      });  
+
+    }  
+
+
+
+    function toggleStats() {  
+
+      const statsText = document.getElementById("statsText");  
+
+      const arrow = document.querySelector(".down-arrow");  
+
+
+
+      if (statsText.style.display === "none" || statsText.style.display === "") {  
+
+        statsText.style.display = "block";  
+
+        arrow.classList.add("rotated");  
+
+
+
+        document.getElementById("followingText").textContent = document.getElementById("following").textContent;  
+
+        document.getElementById("followersText").textContent = document.getElementById("followers").textContent;  
+
+        document.getElementById("increaseText").textContent = document.getElementById("increase").textContent;  
+
+        document.getElementById("likesText").textContent = document.getElementById("likes").textContent;
+
+        document.getElementById("userIdText").textContent = document.getElementById("userId").textContent;
+
+        document.getElementById("nicknameText").textContent = document.getElementById("nickname").textContent;
+
+        document.getElementById("followers_afterText").textContent = document.getElementById("followers_after").textContent;
+
+      } else {  
+
+        statsText.style.display = "none";  
+
+        arrow.classList.remove("rotated");  
+
+      }  
+
+    }  
+
+  </script>  
+
+</body>  
+
+</html>
